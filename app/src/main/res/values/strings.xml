@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">ActivitiesAndViews</string>
+    <string name="username">Username:</string>
+    <string name="password">Password:</string>
+    <string name="login">login</string>
+    <string name="dougyemail">dougydog@gmail.com</string>
+    <string name="email">Email:</string>
+    <string name="welcomeText">Welcome to Bee Journal!</string>
+    <string name="profileUsername">\@dougydog123</string>
+    <string name="profileLocations">Locations</string>
+    <string name="profileEntries">123 Entries</string>
+    <string name="location1">La Cantera, San Antonio, Tx</string>
+</resources>
