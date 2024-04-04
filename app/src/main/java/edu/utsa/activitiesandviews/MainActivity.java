@@ -20,7 +20,7 @@ public class MainActivity extends ComponentActivity {
         setContentView(R.layout.login);
         setupButtons();
         // lauren was here version 2
-        //aaron made another change
+        //aaron made another change here
     }
 
     private void setupButtons(){
