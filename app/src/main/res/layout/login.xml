@@ -71,10 +71,10 @@
         android:layout_width="220dp"
         android:layout_height="219dp"
         android:layout_marginTop="56dp"
+        android:src="@drawable/_6cc7a75_95a6_47cb_99ee_1546dc33f322"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:src="@drawable/beejournallogo" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/welcomeText"
