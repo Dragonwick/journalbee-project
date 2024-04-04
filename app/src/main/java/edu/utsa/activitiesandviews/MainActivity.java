@@ -19,6 +19,7 @@ public class MainActivity extends ComponentActivity {
         // resource folder
         setContentView(R.layout.login);
         setupButtons();
+        // lauren was here version 2
 
     }
 
