@@ -40,7 +40,7 @@
         app:srcCompat="@drawable/_16d0caf_eb9f_420b_a938_4c31e13c776d" />
 
     <ImageButton
-        android:id="@+id/backButton"
+        android:id="@+id/logoutB"
         android:layout_width="2000dp"
         android:layout_height="2000dp"
         android:layout_marginStart="275dp"

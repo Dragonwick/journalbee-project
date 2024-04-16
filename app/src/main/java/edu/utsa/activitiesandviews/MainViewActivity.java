@@ -18,7 +18,8 @@ import com.google.android.gms.maps.model.MapStyleOptions;
 
 public class MainViewActivity extends AppCompatActivity implements OnMapReadyCallback {
 
-    private ImageButton button;
+    private ImageButton profileA;
+    private ImageButton logoutB;
     private GoogleMap gMap;
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -41,9 +42,9 @@ public class MainViewActivity extends AppCompatActivity implements OnMapReadyCal
 
     private void setupButtons(){
         // we named the id of the button "profileB"
-        button = (ImageButton) findViewById(R.id.profileA);
-
-        button.setOnClickListener(new View.OnClickListener(){
+        profileA = (ImageButton) findViewById(R.id.profileA);
+        logoutB = (ImageButton) findViewById(R.id.logoutB);
+        profileA.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
                 // where am i starting (Main Activity)
                 // where am i going (Profile Activity)
@@ -52,5 +53,15 @@ public class MainViewActivity extends AppCompatActivity implements OnMapReadyCal
             }
 
         });
+        logoutB.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v) {
+                // where am i starting (Main Activity)
+                // where am i going (Profile Activity)
+                Intent intent = new Intent(MainViewActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+
+        });
+
     }
 }
