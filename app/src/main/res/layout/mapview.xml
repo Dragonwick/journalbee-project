@@ -27,7 +27,7 @@
         app:srcCompat="@drawable/output_onlinepngtools_2" />
 
     <ImageView
-        android:id="@+id/postButton"
+        android:id="@+id/imageView3"
         android:layout_width="284dp"
         android:layout_height="530dp"
         android:layout_marginBottom="-180dp"
@@ -43,7 +43,7 @@
         android:layout_marginEnd="176dp"
         android:layout_marginBottom="-129dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/postButton"
+        app:layout_constraintEnd_toEndOf="@+id/imageView3"
         app:srcCompat="@drawable/_2d06ffb_9be4_47d8_ac75_302869084a4a" />
 
     <ImageButton
