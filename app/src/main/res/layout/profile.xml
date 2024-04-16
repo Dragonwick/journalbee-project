@@ -53,70 +53,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/location1"
-        android:layout_width="298dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="32dp"
-        android:background="#FFC107"
-        android:gravity="center"
-        android:text="@string/location1"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/location1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profileLocations"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/location1"
-        android:layout_width="298dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="120dp"
-        android:background="#FFC107"
-        android:gravity="center"
-        android:text="Gurabo, Puerto Rico"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profileLocations" />
-
-    <TextView
-        android:id="@+id/location1"
-        android:layout_width="298dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="192dp"
-        android:background="#FFC107"
-        android:gravity="center"
-        android:text="Time Square, New York City, NY"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/location1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.539"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profileLocations"
-        app:layout_constraintVertical_bias="0.118" />
-
-    <TextView
-        android:id="@+id/location1"
-        android:layout_width="298dp"
-        android:layout_height="45dp"
-        android:layout_marginBottom="48dp"
-        android:background="#FFC107"
-        android:gravity="center"
-        android:text="Disney World, Orlando, FL"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.539"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <View
         android:id="@+id/view"
         android:layout_width="362dp"
@@ -127,4 +63,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/profilepic" />
+
+    <Button
+        android:id="@+id/exitProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        tools:layout_editor_absoluteX="160dp"
+        tools:layout_editor_absoluteY="510dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
