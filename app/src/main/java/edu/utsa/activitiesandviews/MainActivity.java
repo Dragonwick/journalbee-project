@@ -19,7 +19,7 @@ public class MainActivity extends ComponentActivity {
     private Button button;
     private AssetManager assets;
 
-
+// lauren was here line 22
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
