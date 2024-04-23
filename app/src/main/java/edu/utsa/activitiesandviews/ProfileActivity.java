@@ -5,6 +5,7 @@ import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -27,12 +28,13 @@ public class ProfileActivity extends ComponentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profile);
         assets = getAssets();
+        setupProfile();
         setupButtons();
     }
 
     private void setupButtons(){
         // we named the id of the button "profileB"
-        button = (Button) findViewById(R.id.exitProfile);
+        button = findViewById(R.id.exitProfile);
 
         button.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
@@ -54,7 +56,7 @@ public class ProfileActivity extends ComponentActivity {
         String[] arr = null;
 
         try  {
-            scan = new Scanner(assets.open("accoutns.txt"));
+            scan = new Scanner(assets.open("accounts.txt"));
             while(scan.hasNextLine()) {
                 str = scan.nextLine();
                 arr = str.split(",");
@@ -69,9 +71,10 @@ public class ProfileActivity extends ComponentActivity {
             System.out.println("Error: " + e.getMessage());
         }
 
-        //TextView name = (TextView) findViewById(R.id.name);
-        //TextView email = (TextView) findViewById(R.id.email);
+        TextView name = (TextView) findViewById(R.id.name);
+        TextView email = (TextView) findViewById(R.id.email);
 
+        // producing error: "java.lang.NullPointerException: Attempt to invoke virtual method 'java.lang.String edu.utsa.activitiesandviews.Account.getEmail()' on a null object reference"
         //name.setText(profileInfo.getName());
         //email.setText(profileInfo.getEmail());
 
