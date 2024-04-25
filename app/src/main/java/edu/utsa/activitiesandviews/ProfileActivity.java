@@ -78,6 +78,7 @@ public class ProfileActivity extends ComponentActivity {
         // there should be another comment above me
         //name.setText(profileInfo.getName());
         //email.setText(profileInfo.getEmail());
+        // another comment
 
     }
 
