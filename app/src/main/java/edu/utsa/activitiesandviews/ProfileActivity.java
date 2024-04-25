@@ -76,9 +76,8 @@ public class ProfileActivity extends ComponentActivity {
 
         // producing error: "java.lang.NullPointerException: Attempt to invoke virtual method 'java.lang.String edu.utsa.activitiesandviews.Account.getEmail()' on a null object reference"
         // there should be another comment above me
-        //name.setText(profileInfo.getName());
-        //email.setText(profileInfo.getEmail());
-        // another comment
+        name.setText(profileInfo.getName());
+        email.setText(profileInfo.getEmail());
 
     }
 

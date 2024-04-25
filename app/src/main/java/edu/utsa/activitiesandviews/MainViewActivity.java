@@ -44,12 +44,15 @@ public class MainViewActivity extends AppCompatActivity implements OnMapReadyCal
         // we named the id of the button "profileB"
         profileA = (ImageButton) findViewById(R.id.profileA);
         logoutB = (ImageButton) findViewById(R.id.logoutB);
+        Intent intentMain = getIntent();
+        int id = intentMain.getIntExtra("id", -1);
         profileA.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
                 // where am i starting (Main Activity)
                 // where am i going (Profile Activity)
-                Intent intent = new Intent(MainViewActivity.this, ProfileActivity.class);
-                startActivity(intent);
+                Intent intentProfile = new Intent(MainViewActivity.this, ProfileActivity.class);
+                intentProfile.putExtra("id", id);
+                startActivity(intentProfile);
             }
 
         });
