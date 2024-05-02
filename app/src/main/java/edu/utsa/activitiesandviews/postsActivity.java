@@ -19,7 +19,7 @@ public class postsActivity extends AppCompatActivity {
         setContentView(R.layout.posts);  // Replace 'posts' with the name of your posts.xml layout file
 
         // initialize EditText fields
-        locationEditText = findViewById(R.id.Location);
+        locationEditText = findViewById(R.id.Title);
         descriptionEditText = findViewById(R.id.Description);
 
         // set onClickListener for the postsCreateButton
