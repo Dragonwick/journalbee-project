@@ -38,6 +38,7 @@ public class MainViewActivity extends AppCompatActivity implements OnMapReadyCal
 
     private ImageButton profileA;
     private ImageButton logoutB;
+    private ImageButton postButton; //this button will go to the posts
     private GoogleMap gMap;
 
     Location currentLocation;
@@ -108,6 +109,8 @@ public class MainViewActivity extends AppCompatActivity implements OnMapReadyCal
         // we named the id of the button "profileB"
         profileA = (ImageButton) findViewById(R.id.profileA);
         logoutB = (ImageButton) findViewById(R.id.logoutB);
+        postButton = (ImageButton) findViewById(R.id.postButton);
+
         Intent intentMain = getIntent();
         int id = intentMain.getIntExtra("id", -1);
         profileA.setOnClickListener(new View.OnClickListener(){
@@ -130,6 +133,12 @@ public class MainViewActivity extends AppCompatActivity implements OnMapReadyCal
 
         });
 
+        postButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(MainViewActivity.this, postsActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
 //this is a test to ensure that my damn git is working :D
