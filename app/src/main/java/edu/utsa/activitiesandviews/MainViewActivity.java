@@ -3,6 +3,11 @@ package edu.utsa.activitiesandviews;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
 import android.location.Location;
 import android.os.Bundle;
 import android.view.View;
@@ -20,8 +25,10 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MapStyleOptions;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -71,11 +78,18 @@ public class MainViewActivity extends AppCompatActivity implements OnMapReadyCal
     public void onMapReady(@NonNull GoogleMap googleMap) {
         GoogleMap myMap = googleMap;
         myMap.setMapStyle(MapStyleOptions.loadRawResourceStyle(MainViewActivity.this, R.raw.map_style));
-        //We're gonna be using a set location for the demo as the emulators location is always set to California.
+
+ //We're gonna be using a set location for the demo as the emulators location is always set to California.
         LatLng myLocation = new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude());
         LatLng location = new LatLng(29.5831, -98.6199);
+        LatLng demoPost = new LatLng(29.58, -98.62);
        // myMap.addMarker(new MarkerOptions().position(myLocation).title("My Location"));
         myMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 16));
+       // myMap.addMarker(new MarkerOptions().position(location).icon(BitmapDescriptorFactory.fromResource(R.drawable.)));
+
+        myMap.addMarker(new MarkerOptions()
+                .position(demoPost)
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
     }
 
     @Override
