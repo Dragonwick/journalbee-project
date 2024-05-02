@@ -1,4 +1,4 @@
-1,Jane Doe,janedoe@gmail.com
-2,admin,admin@gmail.com
-3,John Smith,johnsmith@gmail.com
-4,Floppa Gottcha,floppafloppa@flop.com
+1,Jane Doe,janedoe@gmail.com,25,@girlPower123,@drawable/janeprofilepic
+2,admin,admin@gmail.com,37,@theboss577,@drawable/adminprofilepic
+3,John Smith,johnsmith@gmail.com,53,@itsJohn!23,@drawable/dougyprofilepic
+4,Floppa Gottcha,floppafloppa@flop.com,21,@mrfloppa349,@drawable/floppaprofilepic

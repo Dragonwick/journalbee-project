@@ -115,7 +115,7 @@ public class MainViewActivity extends AppCompatActivity implements OnMapReadyCal
         int id = intentMain.getIntExtra("id", -1);
         profileA.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
-                // where am i starting (Main Activity)
+                // where am i starting (MainView Activity)
                 // where am i going (Profile Activity)
                 Intent intentProfile = new Intent(MainViewActivity.this, ProfileActivity.class);
                 intentProfile.putExtra("id", id);

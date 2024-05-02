@@ -52,18 +52,6 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/profileEntries"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
-        android:layout_marginEnd="52dp"
-        android:text="@string/profileEntries"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/profileUsername" />
-
-    <TextView
         android:id="@+id/info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -80,7 +68,7 @@
         android:layout_width="362dp"
         android:layout_height="16dp"
         android:layout_centerInParent="true"
-        android:background="@color/material_dynamic_neutral50"
+        android:background="@android:color/holo_orange_light"
         app:layout_constraintBottom_toTopOf="@+id/info"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -92,6 +80,8 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
         android:text="Back"
+        android:background="#FF9800"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
