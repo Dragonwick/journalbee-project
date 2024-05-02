@@ -8,5 +8,6 @@ public class postsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.posts);  // Ensure this is your posts.xml layout
+        //test test to make sure that my git is working
     }
 }
