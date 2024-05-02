@@ -32,11 +32,11 @@
         android:layout_width="406dp"
         android:layout_height="269dp"
         android:scaleType="centerCrop"
+        android:src="@drawable/_e041b35c5bb65f4f1bdb60360fc5bb4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Description"
-        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+        app:layout_constraintTop_toBottomOf="@+id/Description" />
 
     <ImageView
         android:id="@+id/postsCreateButton"
