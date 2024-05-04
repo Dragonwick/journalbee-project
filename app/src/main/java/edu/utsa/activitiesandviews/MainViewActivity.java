@@ -141,4 +141,3 @@ public class MainViewActivity extends AppCompatActivity implements OnMapReadyCal
         });
     }
 }
-//this is a test to ensure that my damn git is working :D
