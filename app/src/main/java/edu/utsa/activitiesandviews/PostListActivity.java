@@ -21,7 +21,13 @@ public class PostListActivity extends AppCompatActivity {
         setJournalAdapter();
         setOnClickListener();
 
-
+        findViewById(R.id.backButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // button back to the main menu
+                finish();
+            }
+        });
 
        // Intent intentPostList = getIntent();
         //int id = intentPostList.getIntExtra("id", -1);
