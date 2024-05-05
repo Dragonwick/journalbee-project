@@ -18,10 +18,8 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class MainActivity extends ComponentActivity {
-    private Button button;
     private AssetManager assets;
 
-// Aaron was here again line 22
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +29,7 @@ public class MainActivity extends ComponentActivity {
     }
 
     private void setupButtons(){
-        button = (Button) findViewById(R.id.login);
+        Button button = (Button) findViewById(R.id.login);
 
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -54,7 +52,6 @@ public class MainActivity extends ComponentActivity {
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
-
             }
         });
     }
@@ -81,7 +78,6 @@ public class MainActivity extends ComponentActivity {
         }
 
         return id;
-
     }
 }
 

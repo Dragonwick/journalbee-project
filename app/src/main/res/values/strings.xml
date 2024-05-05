@@ -63,4 +63,8 @@
     <string name="Location">Location:</string>
     <string name="Description">Description:</string>
     <string name="Title">Title:</string>
+    <string name="b">Back</string>
+    <string name="plus">+</string>
+    <string name="JOURNAL">JOURNAL</string>
+    <string name="logout">Logout</string>
 </resources>

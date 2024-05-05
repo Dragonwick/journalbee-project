@@ -12,14 +12,13 @@ tools:context=".MainActivity">
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#FF9800"
-        android:minHeight="?actionBarSize"
         android:theme="?actionBarTheme">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="JOURNAL"
+            android:text="@string/JOURNAL"
             android:textColor="@color/white"
             android:textSize="35sp"
             android:textStyle="bold" />
@@ -31,9 +30,20 @@ tools:context=".MainActivity">
             android:layout_gravity="end"
             android:backgroundTint="@color/darkYellow"
             android:onClick="newNote"
-            android:text="+"
+            android:text="@string/plus"
             android:textColor="@color/white"
-            android:textSize="35sp"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:backgroundTint="@color/darkYellow"
+            android:text="@string/b"
+            android:textColor="@color/white"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
     </androidx.appcompat.widget.Toolbar>
