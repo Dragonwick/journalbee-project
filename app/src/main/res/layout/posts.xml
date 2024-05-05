@@ -93,7 +93,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:backgroundTint="@color/white"
-        android:onClick="deleteJournal"
         android:text="DELETE"
         android:textColor="@color/darkYellow"
         android:textSize="25sp"
@@ -101,7 +100,8 @@
         app:layout_constraintBottom_toTopOf="@+id/backButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/postsCreateButton" />
+        app:layout_constraintTop_toBottomOf="@+id/postsCreateButton"
+        android:onClick="deleteJournal"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

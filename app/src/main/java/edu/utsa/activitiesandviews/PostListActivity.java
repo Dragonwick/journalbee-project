@@ -30,21 +30,6 @@ public class PostListActivity extends AppCompatActivity {
             }
         });
 
-       //Intent intentPostList = getIntent();
-       //int id = intentPostList.getIntExtra("id", -1);
-
-
-        /*findViewById(R.id.addPostToJournal).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intentPost = new Intent(PostListActivity.this, postsActivity.class);
-                intentPost.putExtra("id", id);
-                startActivity(intentPost);
-                Log.d("PostListActivity", "ID passed: " + id);
-
-            }
-        });
-        */
 
     }
 
@@ -55,7 +40,7 @@ public class PostListActivity extends AppCompatActivity {
     }
 
     private void loadFromDBToMemory() {
-        SQLiteManager sqLiteManager =SQLiteManager.instanceOfDatabase(this);
+        SQLiteManager sqLiteManager = SQLiteManager.instanceOfDatabase(this);
         sqLiteManager.populateJournalListArray();
     }
     private void setJournalAdapter() {
