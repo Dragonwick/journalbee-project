@@ -10,27 +10,34 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
 
 
 public class postsActivity extends AppCompatActivity {
-    private EditText titleEditText;
-    private EditText descriptionEditText;
-    private ListView noteListView;
+    private EditText titleEditText, descEditText;
+    //private ListView noteListView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.posts);
-        titleEditText = findViewById(R.id.titleEditText);
-        descriptionEditText = findViewById(R.id.descriptionEditText);
         setupButtons();
+        initWidgets();
+    }
+
+    private void initWidgets() {
+        titleEditText = findViewById(R.id.titleEditText);
+        descEditText = findViewById(R.id.descriptionEditText);
+    }
+
+    public void saveJournal(View view){
+        String title = String.valueOf(titleEditText.getText());
+        String desc = String.valueOf(descEditText.getText());
+
+        int postId = Journal.journalArrayList.size();
+        Journal newJournal = new Journal(postId, title,desc);
+        Journal.journalArrayList.add(newJournal);
+        finish();
+
     }
 
     public void setupButtons() {
@@ -42,22 +49,6 @@ public class postsActivity extends AppCompatActivity {
             }
         });
 
-        findViewById(R.id.postsCreateButton).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // button to create a post
 
-                // get the text entered by the user
-                String title = titleEditText.getText().toString();
-                String description = descriptionEditText.getText().toString();
-
-                // save the inputs to a text file
-                //saveInputsToFile(title, description);
-
-                finish();
-            }
-        });
-        // copy file from assets to internal storage
-        //copyFileFromAssets("user_inputs.txt");
     }
 }

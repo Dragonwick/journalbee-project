@@ -24,8 +24,8 @@ public class JournalAdapter extends ArrayAdapter<Journal>{
         if(convertView== null)
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.journal_cell, parent,false);
 
-        TextView title =convertView.findViewById(R.id.cellTitle);
-        TextView desc =convertView.findViewById(R.id.cellDesc);
+        TextView title = convertView.findViewById(R.id.cellTitle);
+        TextView desc = convertView.findViewById(R.id.cellDesc);
 
         title.setText(journal.getTitle());
         desc.setText(journal.getDescription());

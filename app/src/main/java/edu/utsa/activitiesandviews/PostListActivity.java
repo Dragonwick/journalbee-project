@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,8 +30,8 @@ public class PostListActivity extends AppCompatActivity {
             }
         });
 
-       // Intent intentPostList = getIntent();
-        //int id = intentPostList.getIntExtra("id", -1);
+       //Intent intentPostList = getIntent();
+       //int id = intentPostList.getIntExtra("id", -1);
 
 
         /*findViewById(R.id.addPostToJournal).setOnClickListener(new View.OnClickListener() {
@@ -46,6 +47,7 @@ public class PostListActivity extends AppCompatActivity {
         */
 
     }
+
 
 
     private void initWidgets() {
@@ -68,8 +70,6 @@ public class PostListActivity extends AppCompatActivity {
                 Intent editJournalIntent = new Intent(getApplicationContext(), postsActivity.class);
                 editJournalIntent.putExtra(Journal.JOURNAL_EDIT_EXTRA, selectedJournal.getId());
                 startActivity(editJournalIntent);
-
-
             }
         });
 
