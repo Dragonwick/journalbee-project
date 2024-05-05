@@ -23,35 +23,30 @@ public class postsActivity extends AppCompatActivity {
     private EditText titleEditText;
     private EditText descriptionEditText;
     private ListView noteListView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.posts);
+        titleEditText = findViewById(R.id.titleEditText);
+        descriptionEditText = findViewById(R.id.descriptionEditText);
+        setupButtons();
+    }
 
-
-        // initialize EditText fields
-        titleEditText = findViewById(R.id.Title);
-        descriptionEditText = findViewById(R.id.Description);
-
-
-        Intent intentHome = getIntent();
-        int id = intentHome.getIntExtra("id", -1);
-        Log.d("postsActivity", "ID received: " + id);
-
-
+    public void setupButtons() {
         findViewById(R.id.backButton).setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Intent intentBack = new Intent(postsActivity.this, MainViewActivity.class);
-                intentBack.putExtra("id", id);
-                startActivity(intentBack);
+                // button going back to previous page
+                finish();
             }
         });
 
-        // set onClickListener for the postsCreateButton
         findViewById(R.id.postsCreateButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // button to create a post
+
                 // get the text entered by the user
                 String title = titleEditText.getText().toString();
                 String description = descriptionEditText.getText().toString();
@@ -59,17 +54,10 @@ public class postsActivity extends AppCompatActivity {
                 // save the inputs to a text file
                 //saveInputsToFile(title, description);
 
-                // navigate back to mapview.xml
-
-                Intent intentBackToMap = new Intent(postsActivity.this, MainViewActivity.class);
-                intentBackToMap.putExtra("id", -1);
-                startActivity(intentBackToMap);
+                finish();
             }
         });
         // copy file from assets to internal storage
         //copyFileFromAssets("user_inputs.txt");
     }
-
-
-
 }

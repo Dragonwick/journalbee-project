@@ -31,7 +31,7 @@
     </androidx.appcompat.widget.Toolbar>
 
     <EditText
-        android:id="@+id/Title"
+        android:id="@+id/titleEditText"
         android:layout_width="395dp"
         android:layout_height="44dp"
         android:layout_marginTop="8dp"
@@ -43,13 +43,13 @@
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <EditText
-        android:id="@+id/Description"
+        android:id="@+id/descriptionEditText"
         android:layout_width="398dp"
         android:layout_height="42dp"
         android:background="@drawable/posts_edittext_style"
         android:hint="@string/Description"
-        app:layout_constraintStart_toStartOf="@+id/Title"
-        app:layout_constraintTop_toBottomOf="@+id/Title" />
+        app:layout_constraintStart_toStartOf="@+id/titleEditText"
+        app:layout_constraintTop_toBottomOf="@+id/titleEditText" />
 
     <ImageView
         android:id="@+id/sampleImage"
@@ -60,9 +60,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Description" />
+        app:layout_constraintTop_toBottomOf="@+id/descriptionEditText" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/postsCreateButton"
         android:layout_width="56dp"
         android:layout_height="56dp"
@@ -72,7 +72,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sampleImage"
-        android:onClick="saveNote"
+        android:onClick="saveJournal"
         app:srcCompat="@drawable/baseline_create_24"/>
 
     <Button
@@ -86,5 +86,22 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/postsCreateButton" />
+
+    <Button
+        android:id="@+id/deleteJournalButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/white"
+        android:onClick="deleteJournal"
+        android:text="DELETE"
+        android:textColor="@color/darkYellow"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/backButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/postsCreateButton" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

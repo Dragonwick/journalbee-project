@@ -19,8 +19,6 @@ import java.util.Scanner;
 
 
 public class ProfileActivity extends ComponentActivity {
-
-    private Button button;
     private Account profileInfo;
     private AssetManager assets;
 
@@ -34,30 +32,34 @@ public class ProfileActivity extends ComponentActivity {
     }
 
     private void setupButtons() {
-        // we named the id of the button "profileB"
-        button = findViewById(R.id.exitProfile);
         Intent intent = getIntent();
         int id = intent.getIntExtra("id", -1);
 
-        button.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                // where am i starting (Main Activity)
-                // where am i going (Profile Activity)
-                Intent intentBack = new Intent(ProfileActivity.this, MainViewActivity.class);
-                intentBack.putExtra("id", id);
-                startActivity(intentBack);
-            }
+        Button backButton = findViewById(R.id.exitProfile);
+        Button logoutButton = findViewById(R.id.logoutButton);
 
+        backButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // button going back to main menu
+                finish();
+            }
+        });
+
+        logoutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentLogout = new Intent(ProfileActivity.this, MainActivity.class);
+                startActivity(intentLogout);
+            }
         });
     }
 
     public void setupProfile() {
-        Intent intent = getIntent();
-        int id = intent.getIntExtra("id", -1);
-
         Scanner scan;
         String str = "";
         String[] arr = null;
+        Intent intent = getIntent();
+        int id = intent.getIntExtra("id", -1);
 
         try {
             scan = new Scanner(assets.open("accounts.txt"));

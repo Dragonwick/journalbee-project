@@ -44,6 +44,12 @@
             android:label="JournalAdapter"
             android:theme="@style/Theme.ActivitiesAndViews" />
         <activity
+            android:name=".Journal"
+            android:exported="false"
+            android:label="Journal"
+            android:theme="@style/Theme.ActivitiesAndViews" />
+
+        <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"

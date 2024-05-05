@@ -35,22 +35,14 @@ import com.google.android.gms.tasks.Task;
 
 public class MainViewActivity extends AppCompatActivity implements OnMapReadyCallback {
     private final int FINE_PERMISSION_CODE = 1;
-
-    private ImageButton profileA;
-    private ImageButton logoutB;
-    private ImageButton postButton; //this button will go to the posts
-    private GoogleMap gMap;
-
     Location currentLocation;
     FusedLocationProviderClient fusedLocationProviderClient;
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mapview);
         setupButtons();
-
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
         getCurrentLocation();
 
@@ -67,7 +59,6 @@ public class MainViewActivity extends AppCompatActivity implements OnMapReadyCal
             public void onSuccess(Location location) {
                 if (location != null){
                     currentLocation = location;
-
                     SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.id_map);
                     mapFragment.getMapAsync(MainViewActivity.this);
                 }
@@ -106,38 +97,39 @@ public class MainViewActivity extends AppCompatActivity implements OnMapReadyCal
     }
 
     private void setupButtons(){
-        // we named the id of the button "profileB"
-        profileA = (ImageButton) findViewById(R.id.profileA);
-        logoutB = (ImageButton) findViewById(R.id.logoutB);
-        postButton = (ImageButton) findViewById(R.id.postButton);
+        ImageButton profileA = (ImageButton) findViewById(R.id.profileA);
+        ImageButton logoutB = (ImageButton) findViewById(R.id.logoutB);
+        ImageButton postButton = (ImageButton) findViewById(R.id.postButton);
 
         Intent intentMain = getIntent();
         int id = intentMain.getIntExtra("id", -1);
+
         profileA.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
-                // where am i starting (MainView Activity)
-                // where am i going (Profile Activity)
+                // right button going to profile page
                 Intent intentProfile = new Intent(MainViewActivity.this, ProfileActivity.class);
                 intentProfile.putExtra("id", id);
                 startActivity(intentProfile);
             }
 
         });
+
         logoutB.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
-                // where am i starting (Main Activity)
-                // where am i going (Profile Activity)
-                Intent intentLogout = new Intent(MainViewActivity.this, MainActivity.class);
-                startActivity(intentLogout);
+                // left button to post list page
+                Intent intentPostList = new Intent(MainViewActivity.this, PostListActivity.class);
+                intentPostList.putExtra("id", id);
+                startActivity(intentPostList);
             }
 
         });
 
         postButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intentPostList = new Intent(MainViewActivity.this, PostListActivity.class);
-                intentPostList.putExtra("id", id);
-                startActivity(intentPostList);
+                // middle button going to new post page
+                Intent intentNewPost = new Intent(MainViewActivity.this, postsActivity.class);
+                intentNewPost.putExtra("id", id);
+                startActivity(intentNewPost);
             }
         });
     }
