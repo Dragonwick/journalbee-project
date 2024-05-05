@@ -23,8 +23,25 @@
             android:label="@string/title_activity_main_view"
             android:theme="@style/Theme.ActivitiesAndViews" />
         <activity
-            android:name=".MapView"
+            android:name=".ProfileActivity"
             android:exported="false"
+            android:label="profile_activity"
+            android:theme="@style/Theme.ActivitiesAndViews" />
+
+        <activity
+            android:name=".postsActivity"
+            android:exported="false"
+            android:label="posts_activity"
+            android:theme="@style/Theme.ActivitiesAndViews" />
+        <activity
+            android:name=".PostListActivity"
+            android:exported="false"
+            android:label="PostListActivity"
+            android:theme="@style/Theme.ActivitiesAndViews" />
+        <activity
+            android:name=".JournalAdapter"
+            android:exported="false"
+            android:label="JournalAdapter"
             android:theme="@style/Theme.ActivitiesAndViews" />
         <activity
             android:name=".MainActivity"
@@ -42,17 +59,6 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBOjwNgt9LahKycjKRzA0YnHaUsCEfdaO4" />
 
-        <activity
-            android:name=".ProfileActivity"
-            android:exported="false"
-            android:label="profile_activity"
-            android:theme="@style/Theme.ActivitiesAndViews" />
-
-        <activity
-            android:name=".postsActivity"
-            android:exported="false"
-            android:label="posts_activity"
-            android:theme="@style/Theme.ActivitiesAndViews" />
     </application>
 
 </manifest>

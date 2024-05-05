@@ -135,9 +135,9 @@ public class MainViewActivity extends AppCompatActivity implements OnMapReadyCal
 
         postButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intentPost = new Intent(MainViewActivity.this, postsActivity.class);
-                intentPost.putExtra("id", id);
-                startActivity(intentPost);
+                Intent intentPostList = new Intent(MainViewActivity.this, PostListActivity.class);
+                intentPostList.putExtra("id", id);
+                startActivity(intentPostList);
             }
         });
     }

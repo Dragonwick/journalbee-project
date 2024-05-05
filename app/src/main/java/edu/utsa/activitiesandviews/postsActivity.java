@@ -2,10 +2,13 @@ package edu.utsa.activitiesandviews;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+import android.widget.AdapterView;
+import android.widget.ListView;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -19,17 +22,22 @@ import java.io.OutputStream;
 public class postsActivity extends AppCompatActivity {
     private EditText titleEditText;
     private EditText descriptionEditText;
+    private ListView noteListView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.posts);
 
+
         // initialize EditText fields
         titleEditText = findViewById(R.id.Title);
         descriptionEditText = findViewById(R.id.Description);
 
+
         Intent intentHome = getIntent();
         int id = intentHome.getIntExtra("id", -1);
+        Log.d("postsActivity", "ID received: " + id);
+
 
         findViewById(R.id.backButton).setOnClickListener(new View.OnClickListener(){
             @Override
@@ -49,60 +57,19 @@ public class postsActivity extends AppCompatActivity {
                 String description = descriptionEditText.getText().toString();
 
                 // save the inputs to a text file
-                saveInputsToFile(title, description);
+                //saveInputsToFile(title, description);
 
                 // navigate back to mapview.xml
-                Intent intentPost = new Intent(postsActivity.this, MainViewActivity.class);
-                intentPost.putExtra("id", id);
-                startActivity(intentPost);
+
+                Intent intentBackToMap = new Intent(postsActivity.this, MainViewActivity.class);
+                intentBackToMap.putExtra("id", -1);
+                startActivity(intentBackToMap);
             }
         });
         // copy file from assets to internal storage
-        copyFileFromAssets("user_inputs.txt");
+        //copyFileFromAssets("user_inputs.txt");
     }
 
-    private void copyFileFromAssets(String filename) {
-        try {
-            InputStream inputStream = getAssets().open(filename);
-            File outFile = new File(getFilesDir(), filename);
-            OutputStream outputStream = new FileOutputStream(outFile);
-            byte[] buffer = new byte[1024];
-            int length;
-            while ((length = inputStream.read(buffer)) > 0) {
-                outputStream.write(buffer, 0, length);
-            }
-            outputStream.flush();
-            outputStream.close();
-            inputStream.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-    private void saveInputsToFile(String title, String description) {
-        // define the file name and location
-        String fileName = "user_inputs.txt";
 
-        // get the directory where the file is copied
-        File file = new File(getFilesDir(), fileName);
 
-        try {
-            // create FileWriter with append mode to add new content to the file
-            FileWriter fileWriter = new FileWriter(file, true);
-            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-
-            // write the inputs to the file
-            bufferedWriter.write("Title: " + title);
-            bufferedWriter.newLine(); // Add a new line
-            bufferedWriter.write("Description: " + description);
-            bufferedWriter.newLine(); // Add a new line
-
-            // close the BufferedWriter
-            bufferedWriter.close();
-
-            Toast.makeText(postsActivity.this, "Details saved successfully", Toast.LENGTH_SHORT).show();
-        } catch (IOException e) {
-            e.printStackTrace();
-            Toast.makeText(postsActivity.this, "Error: Unable to save details", Toast.LENGTH_SHORT).show();
-        }
-    }
 }
