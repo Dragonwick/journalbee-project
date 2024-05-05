@@ -36,13 +36,16 @@ public class ProfileActivity extends ComponentActivity {
     private void setupButtons() {
         // we named the id of the button "profileB"
         button = findViewById(R.id.exitProfile);
+        Intent intent = getIntent();
+        int id = intent.getIntExtra("id", -1);
 
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // where am i starting (Main Activity)
                 // where am i going (Profile Activity)
-                Intent intent = new Intent(ProfileActivity.this, MainViewActivity.class);
-                startActivity(intent);
+                Intent intentBack = new Intent(ProfileActivity.this, MainViewActivity.class);
+                intentBack.putExtra("id", id);
+                startActivity(intentBack);
             }
 
         });

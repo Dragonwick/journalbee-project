@@ -127,16 +127,17 @@ public class MainViewActivity extends AppCompatActivity implements OnMapReadyCal
             public void onClick(View v) {
                 // where am i starting (Main Activity)
                 // where am i going (Profile Activity)
-                Intent intent = new Intent(MainViewActivity.this, MainActivity.class);
-                startActivity(intent);
+                Intent intentLogout = new Intent(MainViewActivity.this, MainActivity.class);
+                startActivity(intentLogout);
             }
 
         });
 
         postButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent(MainViewActivity.this, postsActivity.class);
-                startActivity(intent);
+                Intent intentPost = new Intent(MainViewActivity.this, postsActivity.class);
+                intentPost.putExtra("id", id);
+                startActivity(intentPost);
             }
         });
     }

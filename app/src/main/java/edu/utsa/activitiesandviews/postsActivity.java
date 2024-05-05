@@ -28,6 +28,18 @@ public class postsActivity extends AppCompatActivity {
         titleEditText = findViewById(R.id.Title);
         descriptionEditText = findViewById(R.id.Description);
 
+        Intent intentHome = getIntent();
+        int id = intentHome.getIntExtra("id", -1);
+
+        findViewById(R.id.backButton).setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intentBack = new Intent(postsActivity.this, MainViewActivity.class);
+                intentBack.putExtra("id", id);
+                startActivity(intentBack);
+            }
+        });
+
         // set onClickListener for the postsCreateButton
         findViewById(R.id.postsCreateButton).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,8 +52,9 @@ public class postsActivity extends AppCompatActivity {
                 saveInputsToFile(title, description);
 
                 // navigate back to mapview.xml
-                Intent intent = new Intent(postsActivity.this, MainViewActivity.class);
-                startActivity(intent);
+                Intent intentPost = new Intent(postsActivity.this, MainViewActivity.class);
+                intentPost.putExtra("id", id);
+                startActivity(intentPost);
             }
         });
         // copy file from assets to internal storage
