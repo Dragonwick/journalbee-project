@@ -1,7 +1,6 @@
 package edu.utsa.activitiesandviews;
 
 public class Account {
-
     private int id;
     private String name;
     private String email;
@@ -28,12 +27,11 @@ public class Account {
     public void setEmail(String email) { this.email = email; }
 
     public String getAge() { return age; }
-    public void setAge(String age) {this.age = age; }
+    public void setAge(String age) { this.age = age; }
 
     public String getDisplayedUname() { return displayedUname; }
-    public void setDisplayedUname(String displayedUname) {this.displayedUname = displayedUname; }
+    public void setDisplayedUname(String displayedUname) { this.displayedUname = displayedUname; }
 
     public String getProfilePic() { return profilePic; }
     public void setProfilePic(String profilePic) { this.profilePic = profilePic; }
-
 }

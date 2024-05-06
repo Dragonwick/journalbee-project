@@ -28,7 +28,7 @@ public class MainActivity extends ComponentActivity {
         setupButtons();
     }
 
-    private void setupButtons(){
+    private void setupButtons() {
         Button button = (Button) findViewById(R.id.login);
 
         button.setOnClickListener(new View.OnClickListener() {

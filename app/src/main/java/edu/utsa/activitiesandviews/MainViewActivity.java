@@ -45,7 +45,6 @@ public class MainViewActivity extends AppCompatActivity implements OnMapReadyCal
         setupButtons();
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
         getCurrentLocation();
-
     }
 
     private void getCurrentLocation() {
@@ -54,10 +53,10 @@ public class MainViewActivity extends AppCompatActivity implements OnMapReadyCal
             return;
         }
         Task<Location> task = fusedLocationProviderClient.getLastLocation();
-        task.addOnSuccessListener(new OnSuccessListener<Location>(){
+        task.addOnSuccessListener(new OnSuccessListener<Location>() {
             @Override
             public void onSuccess(Location location) {
-                if (location != null){
+                if (location != null) {
                     currentLocation = location;
                     SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.id_map);
                     mapFragment.getMapAsync(MainViewActivity.this);
@@ -71,14 +70,15 @@ public class MainViewActivity extends AppCompatActivity implements OnMapReadyCal
         GoogleMap myMap = googleMap;
         myMap.setMapStyle(MapStyleOptions.loadRawResourceStyle(MainViewActivity.this, R.raw.map_style));
 
- //We're gonna be using a set location for the demo as the emulators location is always set to California.
+        //We're gonna be using a set location for the demo as the emulators location is always set to California.
         LatLng myLocation = new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude());
         LatLng location = new LatLng(29.5831, -98.6199);
         LatLng demoPost = new LatLng(29.58, -98.62);
-       // myMap.addMarker(new MarkerOptions().position(myLocation).title("My Location"));
-        myMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 16));
-       // myMap.addMarker(new MarkerOptions().position(location).icon(BitmapDescriptorFactory.fromResource(R.drawable.)));
 
+        // myMap.addMarker(new MarkerOptions().position(myLocation).title("My Location"));
+        myMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 16));
+
+        // myMap.addMarker(new MarkerOptions().position(location).icon(BitmapDescriptorFactory.fromResource(R.drawable.)));
         myMap.addMarker(new MarkerOptions()
                 .position(demoPost)
                 .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
@@ -87,44 +87,43 @@ public class MainViewActivity extends AppCompatActivity implements OnMapReadyCal
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if(requestCode == FINE_PERMISSION_CODE){
-            if(grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+        if (requestCode == FINE_PERMISSION_CODE) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 getCurrentLocation();
-            }else {
+            }
+            else {
                 Toast.makeText(this, "Location Permission Denied", Toast.LENGTH_SHORT).show();
             }
         }
     }
 
-    private void setupButtons(){
-        ImageButton profileA = (ImageButton) findViewById(R.id.profileA);
-        ImageButton logoutB = (ImageButton) findViewById(R.id.logoutB);
-        ImageButton postButton = (ImageButton) findViewById(R.id.postButton);
+    private void setupButtons() {
+        ImageButton profileButton = (ImageButton) findViewById(R.id.profileA);
+        ImageButton postListButton = (ImageButton) findViewById(R.id.logoutB);
+        ImageButton newPostButton = (ImageButton) findViewById(R.id.postButton);
 
         Intent intentMain = getIntent();
         int id = intentMain.getIntExtra("id", -1);
 
-        profileA.setOnClickListener(new View.OnClickListener(){
+        profileButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // right button going to profile page
                 Intent intentProfile = new Intent(MainViewActivity.this, ProfileActivity.class);
                 intentProfile.putExtra("id", id);
                 startActivity(intentProfile);
             }
-
         });
 
-        logoutB.setOnClickListener(new View.OnClickListener(){
+        postListButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // left button to post list page
                 Intent intentPostList = new Intent(MainViewActivity.this, PostListActivity.class);
                 intentPostList.putExtra("id", id);
                 startActivity(intentPostList);
             }
-
         });
 
-        postButton.setOnClickListener(new View.OnClickListener() {
+        newPostButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // middle button going to new post page
                 Intent intentNewPost = new Intent(MainViewActivity.this, postsActivity.class);

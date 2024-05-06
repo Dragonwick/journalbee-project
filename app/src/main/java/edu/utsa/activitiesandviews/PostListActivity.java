@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class PostListActivity extends AppCompatActivity {
     private ListView journalListView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         // set view to postlist
@@ -29,24 +30,22 @@ public class PostListActivity extends AppCompatActivity {
                 finish();
             }
         });
-
-
     }
 
-
-
     private void initWidgets() {
-        journalListView=findViewById(R.id.journalListView);
+        journalListView = findViewById(R.id.journalListView);
     }
 
     private void loadFromDBToMemory() {
         SQLiteManager sqLiteManager = SQLiteManager.instanceOfDatabase(this);
         sqLiteManager.populateJournalListArray();
     }
+
     private void setJournalAdapter() {
         JournalAdapter journalAdapter = new JournalAdapter(getApplicationContext(), Journal.nonDeletedJournals());
         journalListView.setAdapter(journalAdapter);
     }
+
     private void setOnClickListener() {
         journalListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -57,18 +56,16 @@ public class PostListActivity extends AppCompatActivity {
                 startActivity(editJournalIntent);
             }
         });
-
     }
-    public void newJournal(View view){
+
+    public void newJournal(View view) {
         Intent newJournalIntent = new  Intent(this, postsActivity.class);
         startActivity(newJournalIntent);
     }
+
     @Override
-    protected void onResume(){
+    protected void onResume() {
         super.onResume();
         setJournalAdapter();
     }
-
-
-
 }
