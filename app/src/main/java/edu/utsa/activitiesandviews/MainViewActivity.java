@@ -33,8 +33,9 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 
-public class MainViewActivity extends AppCompatActivity implements OnMapReadyCallback {
+public class MainViewActivity extends AppCompatActivity implements OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
     private final int FINE_PERMISSION_CODE = 1;
+    private Marker marker;
     Location currentLocation;
     FusedLocationProviderClient fusedLocationProviderClient;
 
@@ -75,14 +76,32 @@ public class MainViewActivity extends AppCompatActivity implements OnMapReadyCal
         LatLng myLocation = new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude());
         LatLng location = new LatLng(29.5831, -98.6199);
         LatLng demoPost = new LatLng(29.58, -98.62);
+        LatLng demoPost2 = new LatLng(29.59, -98.6211);
+        LatLng demoPost3 = new LatLng(29.5835, -98.6189);
        // myMap.addMarker(new MarkerOptions().position(myLocation).title("My Location"));
         myMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 16));
        // myMap.addMarker(new MarkerOptions().position(location).icon(BitmapDescriptorFactory.fromResource(R.drawable.)));
 
-        myMap.addMarker(new MarkerOptions()
-                .position(demoPost)
+       marker = myMap.addMarker(new MarkerOptions()
+                .position(demoPost).title("Demo Post 1")
                 .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
+        myMap.addMarker(new MarkerOptions()
+                .position(location).title("Demo Post 2")
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
+        myMap.addMarker(new MarkerOptions()
+                .position(demoPost2).title("Demo Post 3")
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
+        myMap.addMarker(new MarkerOptions()
+                .position(demoPost3).title("Demo Post 4")
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
+
+        myMap.setOnMarkerClickListener(this);
+        myMap.getUiSettings().setZoomGesturesEnabled(false);
+        myMap.getUiSettings().setScrollGesturesEnabled(false);
+
     }
+
+
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
@@ -132,5 +151,12 @@ public class MainViewActivity extends AppCompatActivity implements OnMapReadyCal
                 startActivity(intentNewPost);
             }
         });
+    }
+
+    @Override
+    public boolean onMarkerClick(@NonNull Marker marker) {
+        Toast.makeText(this, "DEMO", Toast.LENGTH_SHORT).show();
+
+        return false;
     }
 }
