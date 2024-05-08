@@ -17,7 +17,6 @@ import org.w3c.dom.Text;
 import java.io.IOException;
 import java.util.Scanner;
 
-
 public class ProfileActivity extends ComponentActivity {
     private Account profileInfo;
     private AssetManager assets;
@@ -94,7 +93,8 @@ public class ProfileActivity extends ComponentActivity {
         // Set profile picture
         if (resourceId != 0) { // Check if resource ID is valid
             profilePic.setImageResource(resourceId);
-        } else {
+        }
+        else {
             // Handle case where resource ID is not found
             // You can set a default image or display an error message
         }

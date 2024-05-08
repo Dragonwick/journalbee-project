@@ -4,7 +4,6 @@ import java.util.Date;
 import java.util.ArrayList;
 
 public class Journal {
-
     public static ArrayList<Journal> journalArrayList = new ArrayList<>();
     public static String JOURNAL_EDIT_EXTRA = "journalEdit";
     private int postId;
@@ -27,53 +26,31 @@ public class Journal {
     }
 
     public static Journal getJournalForID(int passedJournalID) {
-        for (Journal journal : journalArrayList){
-            if(journal.getId() == passedJournalID)
+        for (Journal journal : journalArrayList) {
+            if (journal.getId() == passedJournalID)
                 return journal;
         }
         return null;
     }
 
-    public static ArrayList<Journal> nonDeletedJournals(){
+    public static ArrayList<Journal> nonDeletedJournals() {
         ArrayList<Journal> nonDeleted = new ArrayList<>();
-        for(Journal journal : journalArrayList){
-            if(journal.getDeleted() == null)
+        for (Journal journal : journalArrayList) {
+            if (journal.getDeleted() == null)
                 nonDeleted.add(journal);
-
         }
-
         return nonDeleted;
     }
 
-    public int getId() {
-        return postId;
-    }
+    public int getId() { return postId; }
+    public void setId(int postId) { this.postId = postId; }
 
-    public void setId(int postId) {
-        this.postId = postId;
-    }
+    public String getTitle() { return title; }
+    public void setTitle(String title) { this.title = title; }
 
-    public String getTitle() {
-        return title;
-    }
+    public String getDescription() { return description; }
+    public void setDescription(String description) { this.description = description; }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public Date getDeleted() {
-        return deleted;
-    }
-
-    public void setDeleted(Date deleted) {
-        this.deleted = deleted;
-    }
+    public Date getDeleted() { return deleted; }
+    public void setDeleted(Date deleted) { this.deleted = deleted; }
 }
