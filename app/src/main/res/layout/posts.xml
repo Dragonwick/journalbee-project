@@ -51,29 +51,18 @@
         app:layout_constraintStart_toStartOf="@+id/titleEditText"
         app:layout_constraintTop_toBottomOf="@+id/titleEditText" />
 
-    <ImageView
-        android:id="@+id/sampleImage"
-        android:layout_width="406dp"
-        android:layout_height="269dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/earthbee"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/descriptionEditText" />
-
     <ImageButton
         android:id="@+id/postsCreateButton"
         android:layout_width="56dp"
         android:layout_height="56dp"
         android:background="@drawable/circle_bg"
+        android:onClick="saveJournal"
         android:padding="12dp"
-        app:layout_constraintBottom_toBottomOf="@+id/sampleImage"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sampleImage"
-        android:onClick="saveJournal"
-        app:srcCompat="@drawable/baseline_create_24"/>
+        app:layout_constraintTop_toBottomOf="@+id/descriptionEditText"
+        app:srcCompat="@drawable/baseline_create_24" />
 
     <Button
         android:id="@+id/backButton"
